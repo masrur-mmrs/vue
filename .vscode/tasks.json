@@ -4,5 +4,8 @@
     "linux": {
         "command": "google-chrome"
     },
-    "args": ["${file}"]
+    "args": [
+        "${file}"
+    ],
+    "problemMatchers": []
 }
