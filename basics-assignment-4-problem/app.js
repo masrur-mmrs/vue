@@ -16,9 +16,6 @@ const app = Vue.createApp({
         },
     },
     methods: {
-        userID(event) {
-            this.user = event.target.value;
-        },
         toggleVisibility() {
             this.visible = !this.visible;
         },
