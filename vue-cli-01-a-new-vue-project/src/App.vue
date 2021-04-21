@@ -2,8 +2,18 @@
   <section>
     <header><h1>My Friends</h1></header>
     <ul>
-      <friend-contact></friend-contact>
-      <friend-contact></friend-contact>
+      <friend-contact
+        name="Manuel Lorenz"
+        phone-number="0234923423"
+        email-address="manuel@localhost.com"
+        is-favourite="1"
+      ></friend-contact>
+      <friend-contact
+        name="Julie Jones"
+        phone-number="0823487745"
+        email-address="julie@localhost.com"
+        is-favourite="0"
+      ></friend-contact>
     </ul>
   </section>
 </template>
@@ -89,6 +99,7 @@ header {
   color: white;
   padding: 0.05rem 1rem;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
+  margin: 1rem;
 }
 
 #app button:hover,
