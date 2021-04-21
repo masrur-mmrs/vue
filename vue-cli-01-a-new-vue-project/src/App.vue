@@ -1,43 +1,56 @@
 <template>
   <section>
     <header><h1>My Friends</h1></header>
+    <new-friend @add-new-friend="addFriend"></new-friend>
     <ul>
       <friend-contact
-        name="Manuel Lorenz"
-        phone-number="0234923423"
-        email-address="manuel@localhost.com"
-        is-favourite="1"
-      ></friend-contact>
-      <friend-contact
-        name="Julie Jones"
-        phone-number="0823487745"
-        email-address="julie@localhost.com"
-        is-favourite="0"
+        v-for="friend in friends"
+        :key="friend.id"
+        :id="friend.id"
+        :name="friend.name"
+        :phoneNumber="friend.phone"
+        :emailAddress="friend.email"
+        :is-favourite="friend.isFavourite"
+        @toggle-favourite="toggleFavouriteStatus"
       ></friend-contact>
     </ul>
   </section>
 </template>
 <script>
 import FriendContact from "./components/FriendContact.vue";
+import NewFriend from "./components/NewFriend.vue";
 export default {
-  components: { FriendContact },
+  components: { FriendContact, NewFriend },
   data() {
     return {
-      friend: [
+      friends: [
         {
           id: "manuel",
           name: "Manuel Lorenz",
           phone: "87348732",
           email: "manuel@localhost.com",
+          isFavourite: true,
         },
         {
           id: "julie",
           name: "Julie Jones",
           phone: "23463284",
           email: "julie@localhost.com",
+          isFavourite: false,
         },
       ],
     };
+  },
+  methods: {
+    toggleFavouriteStatus(friendId) {
+      const identifiedFriend = this.friends.find(
+        (friend) => friend.id === friendId
+      );
+      identifiedFriend.isFavourite = !identifiedFriend.isFavourite;
+    },
+    addFriend(friend) {
+      this.friends.push(friend);
+    },
   },
 };
 </script>
