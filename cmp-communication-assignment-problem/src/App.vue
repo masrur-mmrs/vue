@@ -30,21 +30,15 @@ export default {
   data() {
     return {
       users: [
-        { id: "gh3h12b", userName: "Masrur", age: "18" },
-        { id: "hndikjsnds", userName: "Sakib", age: "19" },
-        { id: "hndiksdfsf", userName: "Walter White", age: "40" },
+        { id: "gh3h12b", userName: "Masrur", age: 18 },
+        { id: "hndikjsnds", userName: "Sakib", age: 19 },
+        { id: "hndiksdfsf", userName: "Walter White", age: 40 },
       ],
     };
   },
   methods: {
     updateUserData(userID, updatedData) {
-      console.log(userID);
-
       const requiredUser = this.users.find((user) => user.id === userID);
-
-      console.log(requiredUser);
-
-      console.log(updatedData);
 
       requiredUser.userName = updatedData.userName;
       requiredUser.age = updatedData.age;

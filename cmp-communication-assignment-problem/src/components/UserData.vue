@@ -13,7 +13,7 @@ export default {
   data() {
     return {
       name: "",
-      age: "",
+      age: null,
     };
   },
   props: { id: { type: String, required: true } },
@@ -23,9 +23,8 @@ export default {
       event.preventDefault();
       const user = {
         userName: this.name,
-        age: this.age,
+        age: +this.age,
       };
-      console.log("id:", this.id);
 
       this.$emit("update-user-data", this.id, user);
     },
