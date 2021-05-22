@@ -89,10 +89,10 @@ export default {
       )
         .then(response => {
           if (response.ok) {
-            //
+            console.log('All is good');
           } else {
+            throw new Error('Could not save data!');
           }
-          throw new Error('Could not save data!');
         })
         .catch(error => {
           console.log(error);
